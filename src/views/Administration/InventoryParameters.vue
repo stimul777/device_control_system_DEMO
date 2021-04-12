@@ -28,7 +28,7 @@
             </v-data-table>
         </v-container>
         <v-container fluid>
-            <DeviceEdit v-if="!showTable" :EditDeviceProps="EditDeviceProps" @showTableInventary="showTableInventary" />
+            <DeviceEdit v-if="!showTable" :EditDeviceProps="EditDeviceProps" @showTableInventary="showTableInventory" />
         </v-container>
         <v-container fluid>
             <v-bottom-sheet v-model="confirm.isActive">
@@ -166,8 +166,7 @@ export default {
                         }),
                     ),
                 )
-                .then(() => (this.loaderTable = false))
-                .then(() => console.log(this.getInventoryDevice));
+                .then(() => (this.loaderTable = false));
         },
 
         /** Открытие формы редактирования устройства
@@ -183,14 +182,11 @@ export default {
          * @param item
          */
         deleteDevice(item) {
-            // удалить оборудование
-            // this.itemsTable.splice(this.itemsTable.indexOf(this.itemsTable.find(i => i.uuid === item.uuid)), 1);
-            // this.inventoryDelete(item.uuid).then(() => this.$store.dispatch('snackError', 'Оборудование удалено'));
             this.confirm.isActive = true;
             this.confirm.currentItem = item;
         },
 
-        /** Удаление строки в таблице с утсройством
+        /** Удаление строки в таблице с устройством
          *
          */
         deleteDeviceConfirm() {
@@ -208,7 +204,7 @@ export default {
             });
         },
 
-        showTableInventary() {
+        showTableInventory() {
             this.showTable = !this.showTable;
         },
     },

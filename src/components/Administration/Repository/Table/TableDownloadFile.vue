@@ -1,5 +1,5 @@
 <template>
-    <v-container style="padding:0" fluid>
+    <v-container style="padding: 0" fluid>
         <v-data-table
             loading-text="Загрузка данных..."
             loader-height="2"
@@ -140,7 +140,6 @@ export default {
         ...mapActions(['fillingTableOS', 'fillingTableSoft', 'deleteOSrequest', 'deleteTableSoft', 'snackAlert']),
 
         async deleteOS(item) {
-            // console.log('!!!!', item);
             this.activItem = item;
             let objAlert = {
                 text: `Вы уверены, что хотите удалить файл ${this.activItem.file}?`,
@@ -153,7 +152,12 @@ export default {
             this.propsDataTable === 'ISO' ? (this.selectMultiple = false) : (this.selectMultiple = true);
 
             item.loaderProgressCircular = true;
-            item.btnSaveShow = item.btnEditShow = item.commentDisabled = item.nameDisabled = item.osItemDisabled = false;
+            item.btnSaveShow =
+                item.btnEditShow =
+                item.commentDisabled =
+                item.nameDisabled =
+                item.osItemDisabled =
+                    false;
 
             item.itemsTable = this.itemsTable;
 

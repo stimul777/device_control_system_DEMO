@@ -1,4 +1,4 @@
-export default function(instance) {
+export default function (instance) {
     return {
         getAll(params) {
             return instance.get(`DEMO_VERSION'`, { params });

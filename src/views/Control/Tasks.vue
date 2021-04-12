@@ -53,7 +53,7 @@
                     </v-simple-table>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                    <v-simple-table style="background: #F6F6F6">
+                    <v-simple-table>
                         <thead>
                             <tr>
                                 <th>Группа</th>
@@ -166,7 +166,7 @@ export default {
             this.$refs.startIcon[idx].$el.style.color = '#BBBBBB';
         },
 
-        showUnderTable(item, idx) {
+        showUnderTable(item) {
             if (item.menu === 'mdi-menu-right') {
                 item.menu = 'mdi-menu-down';
             } else {

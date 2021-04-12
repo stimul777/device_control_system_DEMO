@@ -9,7 +9,6 @@ export default {
         //* Операционные системы(Get)
         async fillingTableOS(ctx) {
             const installedOS = await this.$api.isoImages.get();
-            // console.log(installedOS.data);
             ctx.commit('updateInstalledOS', installedOS.data);
         },
 

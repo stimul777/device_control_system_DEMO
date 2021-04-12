@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import equiptableMixin from '@/mixins/plugItems.mixin';
+import equitableMixin from '@/mixins/plugItems.mixin';
 
 export default {
-    mixins: [equiptableMixin],
+    mixins: [equitableMixin],
 };
 </script>

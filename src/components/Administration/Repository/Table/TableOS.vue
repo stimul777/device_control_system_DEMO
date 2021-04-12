@@ -1,5 +1,5 @@
 <template>
-    <v-container style="padding:0" fluid>
+    <v-container style="padding: 0" fluid>
         <v-row no-gutters>
             <v-col sm="12" md="12" lg="12" xl="12">
                 <v-data-table
@@ -149,16 +149,15 @@ export default {
         ...mapActions(['fillingTableOS', 'deleteOSrequest', 'snackAlert']),
 
         async deleteOS(item) {
-            this.activItem = item;
+            this.activeItem = item;
             let objAlert = {
-                text: `Вы уверены, что хотите удалить файл __${this.activItem.name}__?`,
+                text: `Вы уверены, что хотите удалить файл __${this.activeItem.name}__?`,
                 sheet: null,
             };
             this.$store.dispatch('snackAlert', objAlert);
         },
 
         async editOS(item) {
-            console.log('!!!!!!!', item);
             item.loaderProgressCircular = true;
             item.btnSaveShow = item.btnEditShow = false;
 
@@ -200,7 +199,6 @@ export default {
             this.itemsTable = this.dataTableAllGetter;
             this.tableLoader = false;
             //  !При создании новой сущности - создать поля)
-            console.log(this.installedOSGetter);
             this.installedOSGetter.map(m =>
                 m.os == null
                     ? (m.os = {
@@ -215,8 +213,6 @@ export default {
                     : false,
             );
 
-            console.log(' this.installedOSGetter', this.installedOSGetter);
-
             this.installedOSGetter.map(m =>
                 this.itemsTable.push({
                     // иконка состояния
@@ -224,7 +220,6 @@ export default {
                     colorStatusIcon: true,
 
                     file: m.name,
-                    // nameOS: m.os.name,
                     versionOS: m.os.version || '-',
                     comment: m.os.comment || '-',
                     type: m.os.type || 'нет типа',
@@ -259,11 +254,11 @@ export default {
 
             await this.deleteOSrequest(this.activItem.uuid);
             this.itemsTable.splice(
-                this.itemsTable.indexOf(this.itemsTable.find(i => i.uuid === this.activItem.uuid)),
+                this.itemsTable.indexOf(this.itemsTable.find(i => i.uuid === this.activeItem.uuid)),
                 1,
             );
 
-            this.$store.dispatch('snackSuccess', `Операционная система ${this.activItem.name} удалена из репозитория`);
+            this.$store.dispatch('snackSuccess', `Операционная система ${this.activeItem.name} удалена из репозитория`);
         },
     },
 

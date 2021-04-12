@@ -16,7 +16,6 @@ export default {
                 setTimeout(async () => {
                     ctx.state.powerOffSocket = await JSON.parse(message);
                     ctx.state.powerOffSocket.uuid = name;
-                    console.error('!!!!!!!!!!!!!!Pwroff!!!!!!!!!!', ctx.state.powerOffSocket);
 
                     ctx.commit('updatePowerOffSocket', ctx.state.powerOffSocket);
                 }, 0);
@@ -26,7 +25,6 @@ export default {
                 setTimeout(async () => {
                     ctx.state.powerOnSocket = await JSON.parse(message);
                     ctx.state.powerOnSocket.uuid = name;
-                    console.error('!!!!!!!!!!!!!!Pwron!!!!!!!!!!', ctx.state.powerOnSocket);
                     ctx.commit('updatePowerOnSocket', ctx.state.powerOnSocket);
                 }, 0);
             });
@@ -36,7 +34,6 @@ export default {
                     ctx.state.powerRebotSocket = await JSON.parse(message);
                     ctx.state.powerRebotSocket.uuid = name;
 
-                    console.error('!!!!!!!!!!!!!!Rbt!!!!!!!!!!', ctx.state.powerRebotSocket);
                     ctx.commit('updatePowerOnSocket', ctx.state.powerRebotSocket);
                 }, 0);
             });

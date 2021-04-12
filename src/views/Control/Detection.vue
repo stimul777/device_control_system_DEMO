@@ -109,8 +109,8 @@ export default {
             this.ip2 = ip;
         },
 
-        /** Проверка диапозона введенных ip-адресов
-         *
+        /**
+         * Проверка диапазона введенных ip-адресов
          */
         checkRange() {
             this.failRange = false;

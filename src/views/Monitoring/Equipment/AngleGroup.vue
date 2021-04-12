@@ -4,22 +4,22 @@
 </template>
 
 <script>
-import equiptableMixin from '@/mixins/equiptable.mixin';
+import equitableMixin from '@/mixins/equiptable.mixin';
 
 export default {
-    mixins: [equiptableMixin],
+    mixins: [equitableMixin],
     data: () => ({
         deviceData: [],
     }),
 
     methods: {
-        /** Вывод дейвайся из userPerspectives
+        /** Вывод девайса из userPerspectives
          *
          * @returns {Promise<void>}
          */
         async generateDeviceData() {
             this.deviceData = this.devices
-                .filter(v => v.ipAddressNumber !== 0) // ! Убрать, когда починят БД.
+                .filter(v => v.ipAddressNumber !== 0)
                 .filter(v => v.userPerspectives?.find(v => v.uuid === this.queryUuid));
         },
     },

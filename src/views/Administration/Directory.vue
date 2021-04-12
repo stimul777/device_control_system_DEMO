@@ -119,8 +119,6 @@ export default {
                 param = 'Racks';
             }
 
-            console.log('param', param);
-
             this.itemsTable = [];
             this.deviceTypeShow = this.enterTitleShow = this.btnEditShow = false;
             this.directoryDataShow = this.tableShow = this.disabledTab = true;
@@ -141,7 +139,7 @@ export default {
         async dataTable(activatedTab, item) {
             this.itemsTable = [];
             this.loaderTable = this.btnEditShow = this.disabledTab = true;
-            this.activItem = item;
+            this.activeItem = item;
             this.activatedTab = activatedTab;
 
             /**Store: Определяем тип справочника и передаем путь
@@ -283,7 +281,7 @@ export default {
                 patchApi.deletePatch = 'deleteAngles';
             }
 
-            // сохранить с чекбоксами тру
+            // сохранить
             await this.$load(async () => {
                 if (patchApi.patch.length > 0) await this.$api.devicesRacks[patchApi.patch](deviceCheckboxTrue);
             });

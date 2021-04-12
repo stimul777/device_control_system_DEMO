@@ -122,13 +122,9 @@ export default {
             }
         },
 
-        btnDaysWeek(item) {
-            console.log(item);
-        },
-
         /** Изменяем компоненты календаря в зависимости от того, откуда он вызван */
         startRender() {
-            switch (this.activComponent) {
+            switch (this.activeComponent) {
                 case 'backupAndRestore':
                     this.showComponentCalendar = true;
                     break;
@@ -168,7 +164,6 @@ export default {
             }
             // save to storage
             this.setPeriodStore(this.dateComboBox);
-            console.log('Отправляем в Storage:', this.dateComboBox);
         },
     },
 

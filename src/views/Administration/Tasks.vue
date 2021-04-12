@@ -5,9 +5,7 @@
                 <v-tab @click="(showUserTasks = true), (showBackgroundTasks = BackgroundTableShow = false)">
                     Пользовательские задачи
                 </v-tab>
-                <v-tab @click="(showUserTasks = false), (showBackgroundTasks = true)">
-                    Фоновые задачи
-                </v-tab>
+                <v-tab @click="(showUserTasks = false), (showBackgroundTasks = true)"> Фоновые задачи </v-tab>
                 <v-tabs-slider :color="'tabs-slider-success'"></v-tabs-slider>
             </v-tabs>
             <!-- UserTasks: -->
@@ -50,10 +48,10 @@ export default {
     }),
 
     methods: {
-        selectTabEmit(activTab) {
-            if (activTab.length !== 0) {
+        selectTabEmit(activeTab) {
+            if (activeTab.length !== 0) {
                 this.BackgroundTableShow = true;
-                this.activTabProps = activTab.map(m => m.id).join();
+                this.activeTabProps = activeTab.map(m => m.id).join();
             } else {
                 this.BackgroundTableShow = false;
             }

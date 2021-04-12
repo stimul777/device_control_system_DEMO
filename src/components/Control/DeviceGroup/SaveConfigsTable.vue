@@ -35,7 +35,7 @@
             <template v-slot:[`item.kickstartFile`]="{ item }">
                 <v-select
                     class="mt-2"
-                    style="max-width:170px"
+                    style="max-width: 170px"
                     :items="item.itemsSelect"
                     :value="item.kickstartFile"
                     v-model="kickstartFileModel"
@@ -127,19 +127,16 @@ export default {
 
         // Начать установку
         async goSaveConfigsTable() {
-            console.log('Выбранный радиобтн', this.radioBtnSelect);
-            console.log('пропсы', this.propsDataTableSaveConfigs);
-
-            const macAdress = [];
+            const macAddress = [];
             this.propsDataTableSaveConfigs.selectedDevece.map(m =>
-                macAdress.push({
+                macAddress.push({
                     uuid: m.uuid,
                     param: m.macAddress,
                 }),
             );
 
             const res = {
-                deviceUuidParams: macAdress,
+                deviceUuidParams: macAddress,
                 isoUrl: this.radioBtnSelect.fileId,
                 kickstartUuid: this.radioBtnSelect.os.kickStartFiles.length
                     ? this.radioBtnSelect.os.kickStartFiles.find(f => f.name == this.currentSelectItem).uuid

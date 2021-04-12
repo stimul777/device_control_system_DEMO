@@ -183,13 +183,12 @@ export default {
     },
     methods: {
         transferDataTable(objParams) {
-            console.log('transferDataTable', objParams);
             this.selectItemList = objParams.key;
-            this.selectTable = objParams.nameTreview;
+            this.selectTable = objParams.nameTreeview;
         },
 
-        fileUploadedSuccess(nameTreview) {
-            this.$emit('updateDownloadTable', nameTreview);
+        fileUploadedSuccess(nameTreeview) {
+            this.$emit('updateDownloadTable', nameTreeview);
         },
     },
 };

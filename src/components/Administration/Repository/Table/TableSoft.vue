@@ -1,5 +1,5 @@
 <template>
-    <v-container style="padding:0" fluid>
+    <v-container style="padding: 0" fluid>
         <v-row no-gutters>
             <v-col sm="12" md="12" lg="12" xl="12">
                 <v-data-table
@@ -171,11 +171,21 @@ export default {
             architecture.map(m => this.architectureItems.push(m.name));
 
             item.btnSaveShow = true;
-            this.loaderProgressCircular = item.commentDisabled = item.disabledName = item.typeDisabled = item.architectureDisabled = false;
+            this.loaderProgressCircular =
+                item.commentDisabled =
+                item.disabledName =
+                item.typeDisabled =
+                item.architectureDisabled =
+                    false;
         },
 
         async saveEditedSoft(item) {
-            item.btnEditShow = item.commentDisabled = item.disabledName = item.architectureDisabled = item.typeDisabled = true;
+            item.btnEditShow =
+                item.commentDisabled =
+                item.disabledName =
+                item.architectureDisabled =
+                item.typeDisabled =
+                    true;
             item.btnSaveShow = false;
 
             // меняем icon на green
@@ -202,9 +212,7 @@ export default {
             this.itemsTable = [];
             await this.fillingTableSoft();
 
-            console.log(' this.softGetter', this.softGetter);
-
-            //  !Если пришел левый объект без ОС(временно(но что более постоянноe, чем временное?))
+            //  !ОС не пришла:
             this.softGetter.map(m =>
                 m.os == null
                     ? (m.os = {

@@ -55,7 +55,7 @@
                 </v-container>
                 <ProgressCircular
                     v-show="progressCircularShow"
-                    style="top: 40%; left: 50%;"
+                    style="top: 40%; left: 50%"
                     :progressCircularProps="progressCircularProps"
                 />
             </v-col>
@@ -84,9 +84,7 @@ export default {
     },
 
     data: () => ({
-        // массив с отсортированными комп
         components: [],
-        // progressCircular(лоадер)
         progressCircularProps: {
             size: 50,
             color: Constants.STYLE.SUCCESS,
@@ -238,7 +236,11 @@ export default {
 
         settingParameters(val) {
             if (val === 0) {
-                this.showTableTemplates = this.showTableCompDevices = this.showEventMessages = this.showEditTableGroups = false;
+                this.showTableTemplates =
+                    this.showTableCompDevices =
+                    this.showEventMessages =
+                    this.showEditTableGroups =
+                        false;
                 this.addCompTable = [];
             }
         },

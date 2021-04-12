@@ -107,11 +107,7 @@ export default {
     methods: {
         ...mapActions(['snackError']),
 
-        fetchTemplates(item) {
-            console.log('ITEM!!!', item);
-        },
-
-        addTemplat(item) {
+        addTemplate(item) {
             if (item.name === 'Новый шаблон') {
                 return this.snackError('Заполните шаблон!');
             }
@@ -138,13 +134,8 @@ export default {
             item.disabled = !item.disabled;
         },
 
-        selectedActiv(i) {
-            console.log('Click: ', i);
+        selectedActive(i) {
             this.$emit('clickTemplates', i);
-        },
-
-        test(item) {
-            console.log('клик по элементу', item);
         },
     },
 

@@ -154,7 +154,6 @@ import { Constants } from '@/plugins/constants';
 export default {
     data: () => ({
         Constants,
-        // данные для таблицы
         tableHeaders: [],
         tableData: [],
 

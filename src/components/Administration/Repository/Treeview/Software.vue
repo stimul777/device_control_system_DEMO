@@ -35,8 +35,7 @@ export default {
 
     watch: {
         selectOff() {
-            console.log('PROPS!!!-SOFTWARE', this.selectOff);
-            return (this.activTab = []);
+            return (this.activeTab = []);
         },
     },
 };

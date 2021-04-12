@@ -5,6 +5,5 @@ include:
   - project: library/pipelines
     ref: master
     file: docker/docker-build-generic.yaml
-  - project: c_suim/deploy
     ref: master
     file: pipelines/triggers/sandbox-trigger.yaml

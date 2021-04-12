@@ -20,16 +20,16 @@
                 <v-select :items="itemsRacks" label="Выбрать стойку из существующих" v-model="selectRack"></v-select>
             </v-col>
             <v-col>
-                <v-btn class="btn btn-success" style="min-width:160px;" to="/administration/directory"
+                <v-btn class="btn btn-success" style="min-width: 160px" to="/administration/directory"
                     >Создать новую стойку</v-btn
                 ></v-col
             >
         </v-row>
         <v-container style="margin-left: 60%">
-            <v-btn class="btn btn-success" style="min-width:140px" @click="cancel()"> Отмена </v-btn>
+            <v-btn class="btn btn-success" style="min-width: 140px" @click="cancel()"> Отмена </v-btn>
             <v-btn
                 class="btn btn-success"
-                style="min-width:140px"
+                style="min-width: 140px"
                 :disabled="disabledInstallBtn"
                 @click="goInstallOS()"
             >
@@ -50,9 +50,6 @@ export default {
     }),
     methods: {
         goInstallOS() {
-            console.log('textareaValue', this.racks);
-            console.log('model', this.selectRack);
-
             const arrayMAC = JSON.parse(this.textareaValue);
 
             arrayMAC.map(
